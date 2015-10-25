@@ -5,15 +5,17 @@
  */
 package com.tutorialspoint.stateless;
 
-import javax.ejb.Stateless;
+import java.util.List;
+import javax.ejb.Remote;
 
 /**
  *
  * @author Lawrence
  */
-@Stateless
-public class NewSessionBean implements NewSessionBeanLocal {
+@Remote
+public interface LibrarySessionBeanRemote {
+    void addBook(String bookName);
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    List getBooks();
+
 }
